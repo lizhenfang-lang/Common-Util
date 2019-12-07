@@ -70,8 +70,11 @@ public class DateUtil {
 		//一天有多少毫秒
 		Long dayTime=1000*60*60*24L;
 		Long startTime=dele1.getTime();
+		System.out.println(startTime);
 		Long endTime=date2.getTime();
+		System.out.println(endTime);
 		Double dayNum = Math.abs(((endTime-startTime)/dayTime*1.0));
+		System.out.println(dayNum);
 		return dayNum.intValue()+1;
 	}
 	
@@ -138,7 +141,9 @@ public class DateUtil {
 		
 		return c.getTime();
 	}
-	
+	/**
+	 * 获取指定日期月份的最后一天
+	 */
 	public static Date getLastDateInMonth(Date theDate) {
 		Calendar c=Calendar.getInstance();
 		c.setTime(theDate);
@@ -168,9 +173,7 @@ public class DateUtil {
 		}
 	
 	public static void main(String [] args) throws ParseException {
-		Date date1=dateTimeFormat.parse("2019-12-05 16:21:33");
-		Date date2=dateTimeFormat.parse("2019-12-05 15:34:33");
-		System.out.println(compareTime(date1, date2));
+		System.out.println(getDayNum(dateFormat.parse("2001-01-01"), dateFormat.parse("2001-01-02")));
 	}
 }
 

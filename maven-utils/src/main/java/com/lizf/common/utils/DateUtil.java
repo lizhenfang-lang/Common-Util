@@ -174,6 +174,8 @@ public class DateUtil {
 	
 	public static void main(String [] args) throws ParseException {
 		System.out.println(getDayNum(dateFormat.parse("2001-01-01"), dateFormat.parse("2001-01-02")));
+		Date endDate = dateFormat.parse("2019-11-32");
+     	System.out.println(getDayNum(endDate));
 	}
 }
 

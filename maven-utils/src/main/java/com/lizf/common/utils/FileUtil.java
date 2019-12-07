@@ -21,11 +21,11 @@ public class FileUtil {
 	 */
 	public static String getExtName(String fileName) {
 		// 处理空异常
-		if (fileName == null || "".equals(fileName)) {
+		if (fileName == null || fileName.equals("")) {
 			throw new RuntimeException("文件名不能为空");
 		}
 		if (fileName.indexOf(".") <= -1) {
-			throw new RuntimeException(fileName + ":改文件名没有包含扩展名");
+			throw new RuntimeException(fileName + ":该文件名没有包含扩展名");
 		}
 		String extName = fileName.substring(fileName.lastIndexOf("."));
 		return extName;
